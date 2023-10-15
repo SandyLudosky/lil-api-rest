@@ -48,6 +48,6 @@ app.listen(PORT, () => {
   app.use("/api", routes);
 
   mongoose
-    .connect("mongodb://localhost:27017/database", { useNewUrlParser: true })
+    .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
     .then(() => console.log("Connected to database!"));
 });
